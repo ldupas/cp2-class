@@ -41,7 +41,7 @@ class GameList extends Component {
         <button type="button" onClick={this.handleBest}>
           {isFiltered ? "All games" : "Best games"}
         </button>
-        <div className="GameList-list">
+        <div>
           {filteredGames.map((game) => (
             <Game key={game.id} game={game} />
           ))}
