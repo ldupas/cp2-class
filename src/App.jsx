@@ -4,7 +4,7 @@ import GameList from "./components/GameList";
 function App() {
   return (
     <div className="App">
-      <Header title="Correction checkpoint 2 - Class version" />
+      <Header title="Nice to meet you guys !" />
       <GameList />
     </div>
   );

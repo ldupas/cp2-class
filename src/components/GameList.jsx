@@ -7,7 +7,6 @@ class GameList extends Component {
     super(props);
     this.state = {
       games: [],
-      isFiltered: false,
     };
   }
 
@@ -15,18 +14,7 @@ class GameList extends Component {
     axios.get('https://apis.wilders.dev/wild-games/games/')
       .then(res => 
         this.setState({ games: res.data }));
-  }
-
-  handleBest = () => {
-    const { isFiltered } = this.state;
-    this.setState({
-      isFiltered: !isFiltered,
-    });
-  };
-
-  filteredGames = () => {
-    const { games, isFiltered } = this.state;
-    return isFiltered ? games.filter((game) => game.rating >= 4.5) : games;
+        
   }
 
   componentDidMount() {
@@ -34,15 +22,11 @@ class GameList extends Component {
   }
 
   render() {
-    const { isFiltered } = this.state;
-    const filteredGames = this.filteredGames();
+    const games = this.state.games;
     return (
       <section className="GameList">
-        <button type="button" onClick={this.handleBest}>
-          {isFiltered ? "All games" : "Best games"}
-        </button>
         <div>
-          {filteredGames.map((game) => (
+          {games.map((game) => (
             <Game key={game.id} game={game} />
           ))}
         </div>
