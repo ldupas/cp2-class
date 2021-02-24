@@ -25,7 +25,7 @@ class Game extends Component {
         <h2>{game.name}</h2>
         <p>Rating: {game.rating}</p>
         <span onClick={this.handleFavorite}>
-            {isFavorite ? '❤️' : 'Fav ?'}
+            {isFavorite ? '❤️' : 'Add to fav ? click me !'}
         </span>
         <img className="game-img" src={game.background_image} alt="game img" />
       </div>
