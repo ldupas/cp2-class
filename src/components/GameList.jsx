@@ -12,9 +12,10 @@ class GameList extends Component {
   }
 
   fetchData = () => {
-    axios.get('https://apis.wilders.dev/wild-games/games/')
-      .then(res => 
-        this.setState({ games: res.data }));
+    axios
+    .get('https://apis.wilders.dev/wild-games/games/')
+    .then(res => 
+      this.setState({ games: res.data }));
   }
 
   handleBest = () => {
